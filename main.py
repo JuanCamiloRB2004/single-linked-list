@@ -1,0 +1,11 @@
+from singleLinkedList import SingleLinkedList
+inst_SLL = SingleLinkedList()
+inst_SLL.push_node('A')
+inst_SLL.push_node('B')
+inst_SLL.push_node('C')
+inst_SLL.push_node('D')
+inst_SLL.push_node('F')
+inst_SLL.insert_node(5, 'E')
+inst_SLL.insert_node(7, 'G')
+inst_SLL.insert_node(1, '0')
+inst_SLL.show_info_sll()
