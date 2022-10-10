@@ -136,7 +136,7 @@ class SingleLinkedList:
                 previous_node = self.get_node(index - 1)
                 previous_node.next = remove_node.next
                 remove_node.next = None
-                
+    '''           
     def insert_node(self, index, value):
         if index < 1 or index > self.length:
             print('posicion erronea')
@@ -153,7 +153,7 @@ class SingleLinkedList:
             previous_node.next = new_node
             new_node.next = next_node
             self.length +=1
-    '''
+    
     def reverse_node(self):
         contador = 1
         nodos = []
