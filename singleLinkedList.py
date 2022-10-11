@@ -151,7 +151,7 @@ class SingleLinkedList:
             previous_node.next = new_node
             new_node.next = next_node
             self.length +=1
-    '''       
+           
     def reverse_node(self):
         i = 1
         tamaño = self.length-1
@@ -160,14 +160,5 @@ class SingleLinkedList:
             self.pop_node()
             i+=1        
     
-    def reverse(self):
-        anterior = None
-        siguiente = None
-        i = self.head
-        while i:
-            siguiente = i.next
-            i.next = anterior
-            anterior = i
-            i = siguiente
-        self.head = anterior
-    '''
+    
+    
