@@ -28,7 +28,7 @@ class SingleLinkedList:
         new_node = self.Node(value)
         ''' Consultar si la lista NO tiene head y tail '''
         if self.head == None and self.tail == None:
-            ''' En este caso la lista esta vacía, no contiene nodos '''
+            ''' En este caso la lista esta vacía, no conti  ene nodos '''
             self.head = new_node
             self.tail = new_node
         else:
@@ -136,16 +136,14 @@ class SingleLinkedList:
                 previous_node = self.get_node(index - 1)
                 previous_node.next = remove_node.next
                 remove_node.next = None
-    '''           
+    '''            
     def insert_node(self, index, value):
-        if index < 1 or index > self.length:
+        if index <= 0  or index > self.length+1:
             print('posicion erronea')
         elif index == 1:
             self.unshift_node(value)
-            self.length +=1
         elif index == self.length+1:
             self.push_node(value)
-            self.length +=1
         else: 
             previous_node = self.get_node(index-1)
             new_node = self.Node(value)
@@ -155,28 +153,21 @@ class SingleLinkedList:
             self.length +=1
     
     def reverse_node(self):
-        contador = 1
-        nodos = []
-        while contador <= self.length:
-            nodos.append(self.get_node(contador).value)
-            contador += 1
-        
-        contador = 1
-        while contador <= self.length:
-            self.remove_node(contador)
-            contador+=1
-        print('lista')
-        print(nodos)
-        print('nuevos nodos')
-        self.show_info_sll
-        print('reversa')
-        contador = 0
-        self.length = 0
-        nodos.reverse()
-        print(nodos[0])
-        while contador < len(nodos):
-            self.push_node(nodos[contador])
-            contador+=1
-            self.show_info_sll()
-    '''        
-            
+        i = 1
+        tamaño = self.length-1
+        while i <=  tamaño:
+            self.insert_node(i,self.tail.value)
+            self.pop_node()
+            i+=1        
+    
+    def reverse(self):
+        anterior = None
+        siguiente = None
+        i = self.head
+        while i:
+            siguiente = i.next
+            i.next = anterior
+            anterior = i
+            i = siguiente
+        self.head = anterior
+    '''
